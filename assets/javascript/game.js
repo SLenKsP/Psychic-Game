@@ -12,11 +12,11 @@ document.getElementById("remainingGuesses").innerHTML = remainingGuess;
 
 // Reset function - this will reset remaining guesses and comp guess
 function reset() {
-  var anotherGuess = chars.charAt(Math.floor(Math.random() * chars.length));
+  guess = chars.charAt(Math.floor(Math.random() * chars.length));
   //   document.getElementById("compGuess").innerHTML = guess;
   remainingGuess = 10;
   document.getElementById("remainingGuesses").innerHTML = remainingGuess;
-  return anotherGuess;
+  return guess;
 }
 // DOM values for compGuess and remainingGuesses
 
@@ -28,13 +28,13 @@ document.onkeyup = function(event) {
   ).innerHTML += `${userText.innerHTML} , `; //adding user key input to guess history
 
   // comparing user selected char to comp char
-  if (userText.innerHTML === guess || userText.innerHTML === anotherGuess) {
+  if (userText.innerHTML === guess) {
     win++;
     // remainingGuess--;
     document.getElementById("totalWins").innerHTML = win;
     document.getElementById("guessHistory").innerHTML = " ";
     alert(`Letter was ${guess}`); //alerts correct char
-    // reset();
+    reset();
     document.getElementById("compGuess").innerHTML = reset();
   } else {
     remainingGuess--;
