@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Cache-control" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Psychic-Game</title>
@@ -21,7 +22,10 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="alert alert-primary" role="alert">
-            <h1><strong>Guess a Letter I am thinking of</strong></h1>
+            <h1>
+              <strong>Guess a Letter I am thinking of: </strong
+              ><span class="text-danger my-0" id="compGuess"></span>
+            </h1>
           </div>
         </div>
       </div>
@@ -45,6 +49,12 @@
       <div class="row mt-1 mx-1">
         <div class="col-sm-12 bg-secondary text-light">
           <h1 class="my-3">Guesses so far: <span id="guessHistory"></span></h1>
+        </div>
+      </div>
+
+      <div class="row mt-1 mx-1">
+        <div class="col-sm-12 bg-dark text-light">
+          <h1 class="my-3">Your Guess: <span id="myGuess"></span></h1>
         </div>
       </div>
     </div>
