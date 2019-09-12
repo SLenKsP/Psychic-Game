@@ -16,12 +16,13 @@ function reset() {
   //   document.getElementById("compGuess").innerHTML = guess;
   remainingGuess = 10;
   document.getElementById("remainingGuesses").innerHTML = remainingGuess;
+  userText.innerHTML = " ";
   return guess;
 }
 // DOM values for compGuess and remainingGuesses
 
 // Key up function
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
   userText.textContent = event.key;
   document.getElementById(
     "guessHistory"
@@ -39,6 +40,7 @@ document.onkeyup = function(event) {
   } else {
     remainingGuess--;
     document.getElementById("remainingGuesses").innerHTML = remainingGuess;
+
   }
   // function to increment loss if no remaining guesses left
   if (remainingGuess === 0) {
@@ -50,3 +52,16 @@ document.onkeyup = function(event) {
     document.getElementById("remainingGuesses").innerHTML = remainingGuess;
   }
 };
+
+function masterReset() {
+  guess = chars.charAt(Math.floor(Math.random() * chars.length));
+  document.getElementById("compGuess").innerHTML = guess;
+  remainingGuess = 10;
+  document.getElementById("remainingGuesses").innerHTML = remainingGuess;
+  win = 0;
+  document.getElementById("totalWins").innerHTML = win;
+  loss = 0;
+  document.getElementById("totalLosses").innerHTML = loss;
+  userText.innerHTML = " ";
+  document.getElementById("guessHistory").innerHTML = " ";
+}
