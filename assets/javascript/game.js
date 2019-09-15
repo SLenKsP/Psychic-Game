@@ -61,10 +61,8 @@ function masterReset() {
   // document.getElementById("compGuess").innerHTML = guess;
   remainingGuess = 10;
   document.getElementById("remainingGuesses").innerHTML = remainingGuess;
-  win = 0;
-  document.getElementById("totalWins").innerHTML = win;
-  loss = 0;
-  document.getElementById("totalLosses").innerHTML = loss;
+  document.getElementById("totalWins").innerHTML = " ";
+  document.getElementById("totalLosses").innerHTML = " ";
   userText.innerHTML = " ";
   document.getElementById("guessHistory").innerHTML = " ";
 }
