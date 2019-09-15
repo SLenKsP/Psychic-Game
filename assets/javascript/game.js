@@ -36,7 +36,7 @@ document.onkeyup = function(event) {
     document.getElementById("totalWins").innerHTML = win;
 
     document.getElementById("guessHistory").innerHTML = " ";
-    alert(`Letter was ${guess}`); //alerts correct char
+    alert(`CORRECT!, Letter was ${guess}`); //alerts correct char
     reset();
     console.log(guess);
     // document.getElementById("compGuess").innerHTML = reset();
@@ -49,7 +49,7 @@ document.onkeyup = function(event) {
     loss++;
 
     document.getElementById("totalLosses").innerHTML = loss;
-    alert(`Correct letter was ${guess}`);
+    alert(`WRONG!, letter was ${guess}`);
     reset();
     console.log(guess);
   }
@@ -69,4 +69,10 @@ function masterReset() {
   document.getElementById("guessHistory").innerHTML = " ";
 }
 
-//animation for win and loss
+//Some Animation
+
+//Set interval to change background color
+setInterval(function() {
+  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = `#${randomColor}`;
+}, 2000);
